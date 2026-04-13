@@ -14,9 +14,16 @@ public class Cuenta {
     }
 
     public void depositar(double monto) {
-        this.saldo += monto;
-        System.out.println("Nombre: " + this.nombre);
-        System.out.println("Se  te despositaron: "+monto);
+        if(monto>0)
+        {
+            this.saldo += monto;
+            System.out.println("Te despositaron: "+monto +" Cuenta: "+this.nombre);
+            System.out.println("----------------------");
+        }
+        else{
+            System.out.println("El monto debe ser mayor a 0");
+        }
+
     }
 
     public void transferir(Cuenta cuentaDestino, double monto) {
