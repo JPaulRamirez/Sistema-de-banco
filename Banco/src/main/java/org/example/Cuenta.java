@@ -14,13 +14,16 @@ public class Cuenta {
     }
 
     public void depositar(double monto) {
-        saldo += monto;
+        this.saldo += monto;
+        System.out.println("Nombre: " + this.nombre);
+        System.out.println("Se  te despositaron: "+monto);
     }
 
-    public void transferir(Cuenta destino, double monto) {
-        if (this.saldo >= monto) {
+    public void transferir(Cuenta cuentaDestino, double monto) {
+        if (this.saldo >= monto)
+        {
             this.saldo -= monto;
-            destino.saldo += monto;
+            cuentaDestino.depositar(monto);
             System.out.println("Transferencia realizada");
         } else {
             System.out.println("Saldo insuficiente");
@@ -28,10 +31,10 @@ public class Cuenta {
     }
 
     public void mostrar() {
-        System.out.println("Nombre: " + nombre);
-        System.out.println("Direccion: " + direccion);
-        System.out.println("Tipo: " + tipoCuenta);
-        System.out.println("Saldo: $" + saldo);
+        System.out.println("Nombre: " + this.nombre);
+        //System.out.println("Direccion: " + this.direccion);
+        //System.out.println("Tipo de cuenta: " + this.tipoCuenta);
+        System.out.println("Saldo: $" + this.saldo);
         System.out.println("----------------------");
     }
 }
