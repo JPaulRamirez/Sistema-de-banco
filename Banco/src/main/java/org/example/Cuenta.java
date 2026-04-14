@@ -4,12 +4,14 @@ public class Cuenta {
     public String nombre;
     public String direccion;
     public String tipoCuenta;
+    public int dni;
     public double saldo;
 
-    public Cuenta(String nombre, String direccion, String tipoCuenta) {
+    public Cuenta(String nombre, String direccion, String tipoCuenta,int dni) {
         this.nombre = nombre;
         this.direccion = direccion;
         this.tipoCuenta = tipoCuenta;
+        this.dni = dni;
         this.saldo = 0;
     }
 
@@ -26,7 +28,7 @@ public class Cuenta {
 
     }
 
-    public void transferir(Cuenta cuentaDestino, double monto) {
+    public void transferirCuenta(Cuenta cuentaDestino, double monto) {
         if (this.saldo >= monto)
         {
             this.saldo -= monto;
@@ -45,6 +47,7 @@ public class Cuenta {
         System.out.println("Nombre: " + this.nombre);
         System.out.println("Direccion: " + this.direccion);
         System.out.println("Tipo de cuenta: " + this.tipoCuenta);
+        System.out.println("Dni: " + this.dni);
         System.out.println("Saldo: $" + this.saldo);
         System.out.println("----------------------");
     }

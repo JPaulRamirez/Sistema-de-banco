@@ -27,23 +27,52 @@ public class Menu {
             opcion = sc.nextInt();
 
             switch (opcion) {
+
                 case 1:
                     banco.crearCuentas();
                     break;
+
                 case 2:
-                    banco.cuenta1.depositar(1000);
-                    banco.cuenta2.depositar(500);
-                    banco.cuenta3.depositar(2000);
+                    System.out.print("Ingrese DNI: ");
+                    int dni = sc.nextInt();
+
+                    System.out.print("Monto: ");
+                    double monto = sc.nextDouble();
+
+                    banco.depositar(dni, monto);
                     break;
+
                 case 3:
-                    banco.cuenta1.transferir(banco.cuenta2, 1000);
+                    System.out.print("DNI origen: ");
+                    int dniOrigen = sc.nextInt();
+
+                    System.out.print("DNI destino: ");
+                    int dniDestino = sc.nextInt();
+
+                    System.out.print("Monto: ");
+                    double montoTrans = sc.nextDouble();
+
+                    banco.transferir(dniOrigen, dniDestino, montoTrans);
                     break;
+
                 case 4:
-                    banco.modificarCuenta(banco.cuenta2, "Juan", "Calle real 234");
+                    System.out.print("Ingrese DNI: ");
+                    int dniMod = sc.nextInt();
+                    sc.nextLine(); // limpiar buffer
+
+                    System.out.print("Nuevo nombre: ");
+                    String nombre = sc.nextLine();
+
+                    System.out.print("Nueva direccion: ");
+                    String direccion = sc.nextLine();
+
+                    banco.modificarCuenta(dniMod, nombre, direccion);
                     break;
+
                 case 5:
                     banco.mostrarBalance();
                     break;
+
                 case 6:
                     System.out.println("Saliendo...");
                     break;
