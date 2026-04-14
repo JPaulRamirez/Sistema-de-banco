@@ -1,4 +1,4 @@
-package org.example;
+package org.example.Modelo;
 import org.example.strategy.TipoCuentaStrategy;
 
 public class Cuenta {

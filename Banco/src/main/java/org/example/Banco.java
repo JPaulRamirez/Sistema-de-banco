@@ -1,4 +1,5 @@
 package org.example;
+import org.example.Modelo.Cuenta;
 import org.example.strategy.CuentaAhorro;
 import org.example.strategy.CuentaCorriente;
 import org.example.strategy.CuentaPremium;
