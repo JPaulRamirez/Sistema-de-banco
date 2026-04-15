@@ -14,9 +14,9 @@ public class Admin extends Usuario {
         this.username = username;
         this.password = password;
     }
-    public boolean login(String user, String pass) {
+    public boolean login(String user, String contrasena) {
 
-        if(this.username.equals(user) && this.password.equals(pass))
+        if(this.username.equals(user) && this.password.equals(contrasena))
         {
             return true;
         } else {

@@ -15,8 +15,8 @@ public class Sucursal {
         this.cuentas = new ArrayList<>();
     }
 
-    public boolean login(String user, String pass) {
-        if (admin.login(user, pass)) {
+    public boolean login(String user, String contrasena) {
+        if (admin.login(user, contrasena)) {
             System.out.println("Login exitoso en sucursal " + nombre);
             return true;
         } else {
