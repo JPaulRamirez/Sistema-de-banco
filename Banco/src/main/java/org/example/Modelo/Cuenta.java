@@ -1,5 +1,5 @@
 package org.example.Modelo;
-import org.example.TipoCuenta;
+import org.example.enums.TipoCuenta;
 import org.example.strategy.TipoCuentaStrategy;
 
 public class Cuenta {
