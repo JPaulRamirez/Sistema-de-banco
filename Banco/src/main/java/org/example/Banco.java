@@ -1,6 +1,8 @@
 package org.example;
 import org.example.Modelo.Cuenta;
 import org.example.Modelo.Admin;
+import org.example.enums.Rol;
+import org.example.enums.TipoCuenta;
 import org.example.strategy.CuentaAhorro;
 import org.example.strategy.CuentaCorriente;
 

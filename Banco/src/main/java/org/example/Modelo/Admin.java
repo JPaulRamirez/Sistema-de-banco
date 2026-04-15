@@ -1,6 +1,6 @@
 package org.example.Modelo;
 
-import org.example.Rol;
+import org.example.enums.Rol;
 
 public class Admin extends Usuario {
 
