@@ -28,17 +28,7 @@ public class Banco {
         System.out.println("Banco inicializado con 2 sucursales");
     }
 
-    public double consultarSaldoTotalDelBanco() {
 
-        double total = 0;
-
-        for (Sucursal s : sucursales) {
-            total += s.consultarSaldoTotal();
-        }
-
-        return total;
-    }
-    
     public Sucursal buscarSucursal(String nombre) {
         for (Sucursal s : sucursales) {
             if (s.nombre.equalsIgnoreCase(nombre)) {
