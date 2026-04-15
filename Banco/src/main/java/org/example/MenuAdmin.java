@@ -50,8 +50,7 @@ public class MenuAdmin {
             System.out.println("4. Transferir");
             System.out.println("5. Mostrar cuentas");
             System.out.println("6. Saldo total sucursal");
-            System.out.println("7. Auditoria banco");
-            System.out.println("8. Salir");
+            System.out.println("7. Salir");
 
             System.out.print("\nSeleccione una opcion: ");
             opcion = sc.nextInt();
@@ -142,9 +141,6 @@ public class MenuAdmin {
                     System.out.println("Saldo total: $" + sucursal.consultarSaldoTotal());
                     break;
 
-                case 7:
-                    banco.mostrarAuditoriaGlobal();
-                    break;
             }
         }
     }

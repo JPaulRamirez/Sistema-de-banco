@@ -38,17 +38,7 @@ public class Banco {
 
         return total;
     }
-
-    public void mostrarAuditoriaGlobal() {
-
-        System.out.println("=== AUDITORIA GLOBAL DEL BANCO ===");
-
-        for (Sucursal s : sucursales) {
-            s.mostrarCuentas();
-        }
-
-        System.out.println("Saldo total del banco: $" + consultarSaldoTotalDelBanco());
-    }
+    
     public Sucursal buscarSucursal(String nombre) {
         for (Sucursal s : sucursales) {
             if (s.nombre.equalsIgnoreCase(nombre)) {
