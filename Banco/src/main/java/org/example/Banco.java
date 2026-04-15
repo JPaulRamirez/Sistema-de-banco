@@ -22,6 +22,7 @@ public class Banco {
         // Sucursal Norte
         suc2.registrarCuenta(new Cuenta("Luis", "Calle 789", TipoCuenta.AHORRO, 3, new CuentaAhorro()));
         suc2.registrarCuenta(new Cuenta("Maria", "Calle 123", TipoCuenta.CORRIENTE, 4, new CuentaCorriente()));
+
         sucursales.add(suc1);
         sucursales.add(suc2);
 

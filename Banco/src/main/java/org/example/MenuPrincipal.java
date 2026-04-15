@@ -6,9 +6,9 @@ public class MenuPrincipal {
     private Scanner sc;
 
     public MenuPrincipal() {
-        banco = new Banco();
-        banco.inicializarBanco();
-        sc = new Scanner(System.in);
+        this.banco = new Banco();
+        this.banco.inicializarBanco();
+        this.sc = new Scanner(System.in);
     }
 
     public void iniciar() {
@@ -23,18 +23,29 @@ public class MenuPrincipal {
             System.out.println("3. Salir");
 
             System.out.print("\nSeleccione una opcion: ");
-            opcion = sc.nextInt();
 
-            switch (opcion) {
-                case 1:
-                    MenuAdmin menuAdmin = new MenuAdmin(banco, sc);
-                    menuAdmin.iniciar();
-                    break;
-                case 2:
-                    banco.mostrarSucursales();
-                    MenuCliente menuCliente = new MenuCliente(banco, sc);
-                    menuCliente.iniciar();
-                    break;
+            if (sc.hasNextInt()) {
+                opcion = sc.nextInt();
+
+                switch (opcion) {
+                    case 1:
+                        MenuAdmin menuAdmin = new MenuAdmin(banco, sc);
+                        menuAdmin.iniciar();
+                        break;
+                    case 2:
+                        MenuCliente menuCliente = new MenuCliente(banco, sc);
+                        menuCliente.iniciar();
+                        break;
+                    case 3:
+                        System.out.println("Saliendo del sistema...");
+                        break;
+                    default:
+                        System.out.println("Opcion invalida.");
+                }
+
+            } else {
+                System.out.println("Error: Debes ingresar un numero.");
+                sc.next();
             }
         }
         sc.close();

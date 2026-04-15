@@ -44,32 +44,38 @@ public class MenuCliente {
             System.out.println("3. Transferir");
             System.out.println("4. Salir");
             System.out.print("\nSeleccione una opcion: ");
-            opcion = sc.nextInt();
+            if (sc.hasNextInt()) {
+                opcion = sc.nextInt();
+                switch (opcion)
+                {
+                    case 1:
+                        cuenta.mostrar();
+                        break;
 
-            switch (opcion) {
-
-                case 1:
-                    cuenta.mostrar();
-                    break;
-
-                case 2:
-                    System.out.print("Monto: ");
-                    double monto = sc.nextDouble();
-                    cuenta.depositar(monto);
-                    break;
-
-                case 3:
-                    System.out.print("DNI destino: ");
-                    int dniDestino = sc.nextInt();
-
-                    Cuenta destino = sucursal.buscarPorDni(dniDestino);
-
-                    if (destino != null) {
+                    case 2:
                         System.out.print("Monto: ");
-                        double montoT = sc.nextDouble();
-                        cuenta.transferirCuenta(destino, montoT);
-                    }
-                    break;
+                        double monto = sc.nextDouble();
+                        cuenta.depositar(monto);
+                        break;
+
+                    case 3:
+                        System.out.print("DNI destino: ");
+                        int dniDestino = sc.nextInt();
+
+                        Cuenta destino = sucursal.buscarPorDni(dniDestino);
+
+                        if (destino != null) {
+                            System.out.print("Monto: ");
+                            double montoT = sc.nextDouble();
+                            cuenta.transferirCuenta(destino, montoT);
+                        }
+                        break;
+                    default:
+                        System.out.println("Opcion invalida.");
+                }
+            }else {
+                System.out.println("Error: Debes ingresar un número.");
+                sc.next();
             }
         }
     }
