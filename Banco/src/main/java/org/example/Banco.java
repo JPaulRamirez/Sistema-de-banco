@@ -18,7 +18,7 @@ public class Banco {
         Sucursal suc1 = new Sucursal("Centro", admin1);
         Sucursal suc2 = new Sucursal("Norte", admin2);
         // Sucursal Centro
-        suc1.registrarCuenta(new Cuenta("Juan", "Calle 123", TipoCuenta.AHORRO, 1, new CuentaAhorro()));
+        suc1.registrarCuenta(new Cuenta("Pepito", "Calle 123", TipoCuenta.AHORRO, 1, new CuentaAhorro()));
         suc1.registrarCuenta(new Cuenta("Ana", "Calle 456", TipoCuenta.CORRIENTE, 2, new CuentaCorriente()));
 
         // Sucursal Norte
