@@ -1,0 +1,76 @@
+package org.example;
+import org.example.Modelo.Cuenta;
+
+import java.util.Scanner;
+
+public class MenuCliente {
+    private Banco banco;
+    private Scanner sc;
+
+    public MenuCliente(Banco banco, Scanner sc) {
+        this.banco = banco;
+        this.sc = sc;
+    }
+
+    public void iniciar() {
+        banco.mostrarSucursales();
+        System.out.print("Ingrese sucursal: ");
+        String nombre = sc.next();
+
+        Sucursal sucursal = banco.buscarSucursal(nombre);
+
+        if (sucursal == null) {
+            System.out.println("Sucursal no existe");
+            return;
+        }
+
+        System.out.print("Ingrese DNI: ");
+        int dni = sc.nextInt();
+
+        Cuenta cuenta = sucursal.buscarPorDni(dni);
+
+        if (cuenta == null) {
+            System.out.println("Cuenta no encontrada");
+            return;
+        }
+
+        int opcion = 0;
+
+        while (opcion != 4) {
+
+            System.out.println("\n=== MENU CLIENTE ===");
+            System.out.println("1. Ver saldo");
+            System.out.println("2. Depositar");
+            System.out.println("3. Transferir");
+            System.out.println("4. Salir");
+            System.out.print("\nSeleccione una opcion: ");
+            opcion = sc.nextInt();
+
+            switch (opcion) {
+
+                case 1:
+                    cuenta.mostrar();
+                    break;
+
+                case 2:
+                    System.out.print("Monto: ");
+                    double monto = sc.nextDouble();
+                    cuenta.depositar(monto);
+                    break;
+
+                case 3:
+                    System.out.print("DNI destino: ");
+                    int dniDestino = sc.nextInt();
+
+                    Cuenta destino = sucursal.buscarPorDni(dniDestino);
+
+                    if (destino != null) {
+                        System.out.print("Monto: ");
+                        double montoT = sc.nextDouble();
+                        cuenta.transferirCuenta(destino, montoT);
+                    }
+                    break;
+            }
+        }
+    }
+}

@@ -1,15 +1,16 @@
 package org.example.Modelo;
+import org.example.TipoCuenta;
 import org.example.strategy.TipoCuentaStrategy;
 
 public class Cuenta {
     public String nombre;
     public String direccion;
-    public String tipoCuenta;
+    public TipoCuenta tipoCuenta;
     public int dni;
     public double saldo;
     private TipoCuentaStrategy estrategia;
 
-    public Cuenta(String nombre, String direccion, String tipoCuenta, int dni, TipoCuentaStrategy estrategia) {
+    public Cuenta(String nombre, String direccion, TipoCuenta tipoCuenta, int dni, TipoCuentaStrategy estrategia) {
         this.nombre = nombre;
         this.direccion = direccion;
         this.tipoCuenta = tipoCuenta;
