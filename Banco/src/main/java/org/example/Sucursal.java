@@ -75,7 +75,6 @@ public class Sucursal {
 
         origen.transferirCuenta(destino, monto);
     }
-
     public double consultarSaldoTotal() {
         double total = 0;
 

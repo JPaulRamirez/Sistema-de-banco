@@ -38,13 +38,14 @@ public class MenuCliente {
 
         int opcion = 0;
 
-        while (opcion != 4) {
+        while (opcion != 5) {
 
             System.out.println("\n=== MENU CLIENTE ===");
             System.out.println("1. Ver saldo");
             System.out.println("2. Depositar");
-            System.out.println("3. Transferir");
-            System.out.println("4. Salir");
+            System.out.println("3. Extraer saldo");
+            System.out.println("4. Transferir");
+            System.out.println("5. Salir");
             System.out.print("\nSeleccione una opcion: ");
             if (sc.hasNextInt()) {
                 opcion = sc.nextInt();
@@ -61,6 +62,11 @@ public class MenuCliente {
                         break;
 
                     case 3:
+                        System.out.print("Monto: ");
+                        double montoExtaer = sc.nextDouble();
+                        cuenta.extraerSaldo(montoExtaer);
+                        break;
+                    case 4:
                         System.out.print("DNI destino: ");
                         int dniDestino = sc.nextInt();
 
@@ -72,7 +78,7 @@ public class MenuCliente {
                             cuenta.transferirCuenta(destino, montoT);
                         }
                         break;
-                    case 4:
+                    case 5:
                         System.out.println("Saliendo del menu cliente...");
                         break;
                     default:

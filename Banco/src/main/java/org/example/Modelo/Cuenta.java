@@ -48,7 +48,18 @@ public class Cuenta {
 
         System.out.println("Transferencia realizada");
     }
-
+    public void extraerSaldo(double monto){
+        if(monto<=0){
+            System.out.println("Monto invalido");
+            return;
+        }
+        if(!estrategia.puedeTransferir(saldo,monto))
+        {
+            System.out.println("No esta permitido o saldo insuficiente");
+        }
+        saldo-=monto;
+        System.out.println("Extracion realizada : $"+monto);
+    }
 
     public void mostrar() {
         System.out.println("Nombre: " + this.nombre);
